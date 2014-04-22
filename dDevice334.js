@@ -1,13 +1,18 @@
 var ErrorList = [];
-var V3XMLArray = [];
-var V2XMLArray = [];
-var v3NOT_REPORTING = "7701005";
-var v3NOT_RECORDED = "7701003";
-var v3NOT_AVAILABLE = "-5"
+var v3NOT_REPORTING = " NV=\"7701005\"";
+var v3NOT_RECORDED = " NV=\"7701003\"";
+var v2NOT_AVAILABLE = "-5";
 var v2NOT_REPORTING = "-15";
 var v2NOT_APPLICABLE = "-25"
 var v2NOT_RECORDED = "-20";
 var v2NOT_KNOWN = "-10";
+var NIL_V3NOT_RECORDED =  "NV=\"7701003\" xsi:nil=\"true\"/>" ;
+var NIL_V3NOT_REPORTING = "NV=\"7701005\" xsi:nil=\"true\"/>" ;
+var NIL_V3NOT_APPLICABLE ="NV=\"7701001\" xsi:nil=\"true\"/>" ;
+var PN_REFUSED_IS_NILLABLE = "xsi:nil=\"true\" PN=\"8801019\"/>";
+var PN_UNABLE_TO_COMPLETE_IS_NILLABLE = "xsi:nil=\"true\" PN=\"8801023\"/>";
+var PN_FINDING_NOT_PRESENT_IS_NILLABLE = "xsi:nil=\"true\" PN=\"8801005\"/>";
+
 
 var dDevice334 = new Object;
 var D01 = new Object;
@@ -15,6 +20,8 @@ var D01 = new Object;
 var setdDevice = function (businessObject) 
 {
     var _retArray = [];
+    _retArray.push("<DeviceInfoGroup>");
+
     console.log(businessObject);
     console.log(businessObject["dDevice.DeviceGroup"].length);
     
@@ -30,8 +37,9 @@ var setdDevice = function (businessObject)
         }
         else 
         {
-        	D09.D09_01 = _val;
-        	dDevice.DeviceGroup["dDevice.01"] = _val[0];        
+        	D09.D09_01 = _val[0];
+        	dDevice.DeviceGroup["dDevice.01"] = _val[0];
+            _retArray.push("<dDevice.01>" + val + "</dDevice.01>");
         };
 
          _val = getValue(businessObject.elements, "dDevice.02");
@@ -43,26 +51,30 @@ var setdDevice = function (businessObject)
         else 
         {
         	D09.D09_02 = _val[0];
-        	dDevice.DeviceGroup["dDevice.02"] = _val[0];        
+        	dDevice.DeviceGroup["dDevice.02"] = _val[0];  
+            _retArray.push("<dDevice.02>" + val + "</dDevice.02>");
         };
 
-         _val = getValue(businessObject.elements, "dDevice.03");
+        _val = getValue(businessObject.elements, "dDevice.03");
         if (_val == null)
         {
         	dDevice.DeviceGroup["dDevice.03"] = null;   
         }
         else 
         {
-        	dDevice.DeviceGroup["dDevice.03"] = _val;        
+        	dDevice.DeviceGroup["dDevice.03"] = _val;  
+            _retArray.push("<dDevice.03>" + val + "</dDevice.03>");
+      
         };
-          _val = getValue(businessObject.elements, "dDevice.04");
+         _val = getValue(businessObject.elements, "dDevice.04");
         if (_val == null)
         {
         	dDevice.DeviceGroup["dDevice.04"] = null;   
         }
         else 
         {
-        	dDevice.DeviceGroup["dDevice.04"] = _val[0];        
+        	dDevice.DeviceGroup["dDevice.04"] = _val[0]; 
+          _retArray.push("<dDevice.04>" + val + "</dDevice.04>");
         };
         
         _val = getValue(businessObject.elements, "dDevice.05");
@@ -74,7 +86,9 @@ var setdDevice = function (businessObject)
         else 
         {
         	D09.D09_04 = _val[0];
-        	dDevice.DeviceGroup["dDevice.05"] = _val[0];        
+        	dDevice.DeviceGroup["dDevice.05"] = _val[0];
+          _retArray.push("<dDevice.05>" + val + "</dDevice.05>");
+        
         };
         
         _val = getValue(businessObject.elements, "dDevice.06");
@@ -86,10 +100,14 @@ var setdDevice = function (businessObject)
         else 
         {
         	D09.D09_05 = _val[0];
-        	dDevice.DeviceGroup["dDevice.06"] = _val[0];        
+        	dDevice.DeviceGroup["dDevice.06"] = _val[0];   
+          _retArray.push("<dDevice.06>" + val + "</dDevice.06>");
+     
         };
 
     } // loop term
+    _retArray.push("</DeviceInfoGroup>");
+
 };    //end of function   
 
 

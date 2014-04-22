@@ -23,18 +23,18 @@ var setdContact = function (businessObject)
         _val = getValue(businessObject.elements, "dContact.01");
         if (_val == null)
         {
-            if(isRequiredStateElement("dContact.01") ==- true)
+            if(isRequiredStateElement("dContact.01") == true)
             {
-                dContact.ContactInfoGroup["dContact.01"] = v3NOT_RECORDED;
+                _retArray.push("<dContact.01" + NIL_V3NOT_RECORDED);
             }
             else
             {
-                dContact.ContactInfoGroup["dContact.01"] = v2NOT_REPORTING
-            }
+ 				_retArray.push("<dContact.01" + NIL_V3NOT_REPORTING );            }
+        	}
         }
         else 
         {
-            dContact.ContactInfoGroup["dContact.01"] = _val;
+            _retArray.push("<dContact.01>" + val[0] + "</dContact.01>");
         };
 
         _val = getValue(businessObject.elements, "dContact.02");
@@ -43,17 +43,20 @@ var setdContact = function (businessObject)
             if(isRequiredStateElement("dContact.02") ==- true)
             {
                 dContact.ContactInfoGroup["dContact.02"] = v3NOT_RECORDED;
+                _retArray.push("<dContact.02" + NIL_V3NOT_RECORDED);
                 D2.D02_01 = v2NOT_RECORDED
             }
             else
             {
-                dContact.ContactInfoGroup["dContact.02"] = v2NOT_REPORTING
-                D2.D02_01 = v2NOT_REPORTING
+                dContact.ContactInfoGroup["02"] = v2NOT_REPORTING
+                D2.D02_01 = v2NOT_REPORTING;
+   				_retArray.push("<dContact.02" + NIL_V3NOT_REPORTING );            }
             }
         }
         else 
         {
             dContact.ContactInfoGroup["dContact.02"] = _val[0];
+            retArray.push("<dContact.02>" + val[0] + "</dContact.02>");
             D2.D02_01 = _val[0];
         };
 
@@ -63,30 +66,34 @@ var setdContact = function (businessObject)
             if(isRequiredStateElement("dContact.03") ==- true)
             {
                 dContact.ContactInfoGroup["dContact.03"] = v3NOT_RECORDED;
-                D2.D02_03 = v2NOT_RECORDED
+                D2.D02_03 = v2NOT_RECORDED;
+            	_retArray.push("<dContact.03" + NIL_V3NOT_RECORDED);
             }
             else
             {
                 dContact.ContactInfoGroup["dContact.03"] = v2NOT_REPORTING
-                D2.D02_03 = v2NOT_REPORTING
+                D2.D02_03 = v2NOT_REPORTING;
+   				_retArray.push("<dContact.03" + NIL_V3NOT_REPORTING );            }
             }
         }
         else 
         {
             dContact.ContactInfoGroup["dContact.03"] = _val[0];
+            retArray.push("<dContact.03>" + val[0] + "</dContact.03>");
             D2.D02_03 = _val[0];
         };
 
         _val = getValue(businessObject.elements, "dContact.04");
         if (_val == null)
         {
-            dContact.ContactInfoGroup["dContact.04"] = null;
-            D2.D02_03 = v2NOT_RECORDED
+    
         }
         else 
         {
             dContact.ContactInfoGroup["dContact.04"] = _val[0];
             D2.D02_02 = _val[0];
+            retArray.push("<dContact.04>" + val[0] + "</dContact.04>");
+
         };
 
 
@@ -95,17 +102,20 @@ var setdContact = function (businessObject)
         {
             if(isRequiredStateElement("dContact.05") ==- true)
             {
-                dContact.ContactInfoGroup["dContact.05"] = v3NOT_RECORDED;
-                D2.D02_04 = v2NOT_RECORDED
+              	_retArray.push("<dContact.05" + NIL_V3NOT_RECORDED);
+                D2.D02_04 = v2NOT_RECORDED;
             }
             else
             {
-                dContact.ContactInfoGroup["dContact.05"] = v2NOT_REPORTING
-                D2.D02_04 = v2NOT_REPORTING
+                dContact.ContactInfoGroup["dContact.05"] = v2NOT_REPORTING;
+                D2.D02_04 = v2NOT_REPORTING;
+    			_retArray.push("<dContact.05" + NIL_V3NOT_REPORTING );            }
+
             }
         }
         else 
         {
+            retArray.push("<dContact.05>" + val[0] + "</dContact.05>");
             dContact.ContactInfoGroup["dContact.05"] = _val[0];
             D2.D02_04 = _val[0];
         };
@@ -116,41 +126,72 @@ var setdContact = function (businessObject)
         {
             if(isRequiredStateElement("dContact.06") ==- true)
             {
+                _retArray.push("<dContact.06" + NIL_V3NOT_RECORDED);
                 dContact.ContactInfoGroup["dContact.06"] = v3NOT_RECORDED;
-                D2.D02_06 = v2NOT_RECORDED
+                D2.D02_05 = v2NOT_RECORDED;
             }
             else
             {
-                dContact.ContactInfoGroup["dContact.06"] = v2NOT_REPORTING
-                D2.D02_06 = v2NOT_REPORTING
+                dContact.ContactInfoGroup["dContact.06"] = v2NOT_REPORTING;
+                D2.D02_05 = v2NOT_REPORTING;
+        		_retArray.push("<dContact.06" + NIL_V3NOT_REPORTING );            }
+
             }
         }
         else 
         {
             dContact.ContactInfoGroup["dContact.06"] = _val[0];
-            D2.D02_06 = _val[0];
+            D2.D02_05 = _val[0];
+            retArray.push("<dContact.06>" + val[0] + "</dContact.06>");
+
         };
-
-
         _val = getValue(businessObject.elements, "dContact.07");
         if (_val == null)
         {
             if(isRequiredStateElement("dContact.07") ==- true)
             {
                 dContact.ContactInfoGroup["dContact.07"] = v3NOT_RECORDED;
-                D2.D02_07 = v2NOT_RECORDED
+                D2.D02_06 = v2NOT_RECORDED;
+             	_retArray.push("<dContact.07" + NIL_V3NOT_RECORDED);
             }
             else
             {
-                dContact.ContactInfoGroup["dContact.07"] = v2NOT_REPORTING
-                D2.D02_07 = v2NOT_REPORTING
+                dContact.ContactInfoGroup["dContact.07"] = v2NOT_REPORTING;
+                D2.D02_06 = v2NOT_REPORTING;
+            	_retArray.push("<dContact.07" + NIL_V3NOT_REPORTING );  
             }
         }
         else 
         {
             dContact.ContactInfoGroup["dContact.07"] = _val[0];
-            D2.D02_07 = _val[0];
+            D2.D02_06 = _val[0];
+            retArray.push("<dContact.07>" + val[0] + "</dContact.07>");
+
         };
+        
+        _val = getValue(businessObject.elements, "dContact.08");
+        if (_val == null)
+        {
+            if(isRequiredStateElement("dContact.08") ==- true)
+            {
+                dContact.ContactInfoGroup["dContact.08"] = v3NOT_RECORDED;
+                D2.D02_07 = v2NOT_RECORDED;
+             	_retArray.push("<dContact.08" + NIL_V3NOT_RECORDED);
+            }
+            else
+            {
+                dContact.ContactInfoGroup["dContact.08"] = v2NOT_REPORTING;
+                D2.D02_07 = v2NOT_REPORTING;
+            	_retArray.push("<dContact.08" + NIL_V3NOT_REPORTING );  
+            }
+        }
+        else 
+        {
+            dContact.ContactInfoGroup["dContact.08"] = _val[0];
+            D2.D02_07 = _val[0];
+            retArray.push("<dContact.08>" + val[0] + "</dContact.08>");
+        };
+        
 
         _val = getValue(businessObject.elements, "dContact.09");
         if (_val == null)
@@ -160,11 +201,10 @@ var setdContact = function (businessObject)
         else 
         {
             dContact.ContactInfoGroup["dContact.09"] = _val[0];
+            retArray.push("<dContact.09>" + val[0] + "</dContact.09>");
         };
-
-
-
-        _val = getValue(businessObject.elements, "dContact.10");
+        
+       _val = getValue(businessObject.elements, "dContact.10");
         if (_val == null)
         {
             if(isRequiredStateElement("dContact.10") ==- true)
@@ -175,13 +215,15 @@ var setdContact = function (businessObject)
             else
             {
                 dContact.ContactInfoGroup["dContact.10"] = v2NOT_REPORTING
-                D2.D02_08 = v2NOT_REPORTING
+                D2.D02_08 = v2NOT_REPORTING;
+                _retArray.push("<dContact.08" + NIL_V3NOT_REPORTING );  
             }
         }
         else 
         {
             dContact.ContactInfoGroup["dContact.10"] = _val;
             D2.D02_08 = _val;
+            retArray.push("<dContact.10>" + val[0] + "</dContact.10>");
         };
 
         _val = getValue(businessObject.elements, "dContact.11");
@@ -190,20 +232,22 @@ var setdContact = function (businessObject)
             if(isRequiredStateElement("dContact.11") ==- true)
             {
                 dContact.ContactInfoGroup["dContact.11"] = v3NOT_RECORDED;
-                D2.D02_10 = v2NOT_RECORDED
+                D2.D02_10 = v2NOT_RECORDED;
+                _retArray.push("<dContact.11" + NIL_V3NOT_RECORDED);
             }
             else
             {
-                dContact.ContactInfoGroup["dContact.11"] = v2NOT_REPORTING
-                D2.D02_10 = v2NOT_REPORTING
+                dContact.ContactInfoGroup["dContact.11"] = v2NOT_REPORTING;
+			    _retArray.push("<dContact.11" + NIL_V3NOT_REPORTING );  
+                D2.D02_10 = v2NOT_REPORTING;
             }
         }
         else 
         {
             dContact.ContactInfoGroup["dContact.11"] = _val;
             D2.D02_10 = _val;
+            retArray.push("<dContact.11>" + val[0] + "</dContact.11>");
         };
-
         _val = getValue(businessObject.elements, "dContact.12");
         if (_val == null)
         {
@@ -222,74 +266,73 @@ var setdContact = function (businessObject)
         {
             dContact.ContactInfoGroup["dContact.12"] = _val;
             D2.D02_11 = _val;
+            retArray.push("<dContact.12>" + val[0] + "</dContact.12>");
+
         };
 
-        EMSMedicalDirectorGroup = setEMSMedicalDirectorGroup(businessObject["dContact.EMSMedicalDirectorGroup"]);
+retArray.push("<EMSMedicalDirectorGroup>");
+        _val = getValue(businessObject.elements, "dContact.13");
+        if (_val == null)
+        {
+            if(isRequiredStateElement("dContact.13") ==- true)
+            {
+                dContact.ContactInfoGroup["dContact.13"] = v3NOT_RECORDED;
+            }
+            else
+            {
+                dContact.ContactInfoGroup["dContact.13"] = v2NOT_REPORTING
+            }
+        }
+        else 
+        {
+            dContact.ContactInfoGroup["dContact.13"] = _val;
+            retArray.push("<dContact.13>" + val[0] + "</dContact.13>");
+        };
+        
+        _val = getValue(businessObject.elements, "dContact.14");
+        if (_val == null)
+        {
+            if(isRequiredStateElement("dContact.14") ==- true)
+            {
+                dContact.ContactInfoGroup["dContact.14"] = v3NOT_RECORDED;
+            }
+            else
+            {
+                dContact.ContactInfoGroup["dContact.14"] = v2NOT_REPORTING
+            }
+        }
+        else 
+        {
+            dContact.ContactInfoGroup["dContact.14"] = _val;
+            retArray.push("<dContact.14>" + val + "</dContact.14>");
+        };
+        
+        _val = getValue(businessObject.elements, "dContact.15");
+        if (_val == null)
+        {
+        }
+        else 
+        {
+            dContact.ContactInfoGroup["dContact.15"] = _val;
+            retArray.push("<dContact.15>" + val + "</dContact.15>");
+        };
+        
+        _val = getValue(businessObject.elements, "dContact.16");
+        if (_val == null)
+        {
+        }
+        else 
+        {
+            dContact.ContactInfoGroup["dContact.16"] = _val;
+            retArray.push("<dContact.16>" + val + "</dContact.16>");
+        };
+
+
+
+retArray.push("</EMSMedicalDirectorGroup>");
         
     } // loop term
 };    //end of function   
-
-var EMSMedicalDirectorGroup = function (groupObject) {
-    var _val = null;
-    var EMSMedicalDirectorGroup = new Object;
-
-    _val = getValue(businessObject.elements, "dContact.13");
-    if (_val == null)
-    {
-        if(isRequiredStateElement("dContact.13") ==- true)
-        {
-            EMSMedicalDirectorGroup["dContact.13"] = v3NOT_RECORDED;
-        }
-        else
-        {
-            EMSMedicalDirectorGroup["dContact.13"] = v2NOT_REPORTING
-        }
-    }
-    else 
-    {
-        EMSMedicalDirectorGroup["dContact.13"] = _val[0];
-    };
-
-    _val = getValue(businessObject.elements, "dContact.14");
-    if (_val == null)
-    {
-        if(isRequiredStateElement("dContact.14") ==- true)
-        {
-            EMSMedicalDirectorGroup["dContact.14"] = v3NOT_RECORDED;
-        }
-        else
-        {
-            EMSMedicalDirectorGroup["dContact.14"] = v2NOT_REPORTING
-        }
-    }
-    else 
-    {
-        EMSMedicalDirectorGroup["dContact.14"] = _val;
-    };
-
-    _val = getValue(businessObject.elements, "dContact.15");
-    if (_val == null)
-    {
-        EMSMedicalDirectorGroup["dContact.15"] = null;
-    }
-    else 
-    {
-        EMSMedicalDirectorGroup["dContact.15"] = _val;
-    };
-
-    _val = getValue(businessObject.elements, "dContact.16");
-    if (_val == null)
-    {
-        EMSMedicalDirectorGroup["dContact.16"] = null;
-    }
-    else 
-    {
-        EMSMedicalDirectorGroup["dContact.16"] = _val;
-    };
-
-
-    return EMSMedicalDirectorGroup;
-};
 
 
 var isRequiredStateElement = function (elementID) {

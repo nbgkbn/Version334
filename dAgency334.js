@@ -21,6 +21,8 @@ var setdAgency = function (businessObject) {
     }
     else {
         dAgency334["dAgency.01"] = _val[0];
+        _retArray.push("<dAgency.01>" + val[0] + "</dAgency.01>");
+
     };
         
     _val = getValue(businessObject.elements, "dAgency.02");
@@ -30,25 +32,29 @@ var setdAgency = function (businessObject) {
     else {
         D01.D01_01 = _val[0];
         dAgency334["dAgency.02"] = _val [0];
+        _retArray.push("<dAgency.02>" + val[0] + "</dAgency.02>");
+
     };
     
     _val = getValue(businessObject.elements, "dAgency.03");
-    if( _val == null) {
+    if( _val == null) 
+    {
         if (isRequiredStateElement("dAgency.03") == true) {
             ErrorList.push("dAgency.03 required");
-            _val= v3NOT_RECORDED;
-            _val2= v2NOT_RECORDED;
+            _retArray.push("<dAgency.03" + NIL_V3NOT_RECORDED );
+            D01.D01_02= v2NOT_RECORDED;
         }
-        else {
-            _val= v3NOT_REPORTING;
-            _val2= v2NOT_REPORTING;
+        else 
+        {
+            VitalsGroup["dAgency.03"] = v3NOT_REPORTING;
+             D01.D01_02= v2NOT_REPORTING;
+            _retArray.push("<dAgency.03" + NIL_V3NOT_REPORTING);
         }
-        dAgency334["dAgency.03"] = _val;
-        D01.D01_02 = _val2;
     }
-    else {
+    else 
+    {
         D01.D01_02 = _val[0];
-        dAgency334["dAgency.03"] = _val[0];
+        _retArray.push("<dAgency.03>" + val[0] + "</dAgency.03>");
     };
 
     _val = getValue(businessObject.elements, "dAgency.04");
@@ -58,6 +64,8 @@ var setdAgency = function (businessObject) {
     else {
         dAgency334["dAgency.04"] = _val[0];
         D01.D01_03 = _val[0];
+       _retArray.push("<dAgency.04>" + val[0] + "</dAgency.04>");
+
     };
 
 
@@ -68,6 +76,7 @@ var setdAgency = function (businessObject) {
     else {
         dAgency334["dAgency.09"] = _val[0];
         D01.D01_05 = setD2("dAgency.09", _val)[0];
+       _retArray.push("<dAgency.09>" + val[0] + "</dAgency.09>");
         
     };
 
@@ -75,18 +84,20 @@ var setdAgency = function (businessObject) {
     if (_val == null) {
         if (isRequiredStateElement("dAgency.10") == true) {
             ErrorList.push("dAgency.10 required");
-            _val= v3NOT_RECORDED;
-            _val2 = v2NOT_RECORDED;
+ 			_retArray.push("<dAgency.03" + NIL_V3NOT_RECORDED );
+ 			D01.D01_06 = v2NOT_RECORDED;
         }
         else
         {
-            _val= v3NOT_REPORTING;
-            _val2= v2NOT_REPORTING;
+			_retArray.push("<dAgency.03" + NIL_V3NOT_REPORTING );
+            D01.D01_06= v2NOT_REPORTING;
         }
     }
     else {
         D01.D01_06 = setD2("dAgency.10", _val);
         dAgency334["dAgency.10"] = _val;
+       _retArray.push("<dAgency.10>" + val + "</dAgency.10>");
+
     };
 
     _val = getValue(businessObject.elements, "dAgency.11");
@@ -98,6 +109,8 @@ var setdAgency = function (businessObject) {
     else {
         D01.D01_07 = setD2("dAgency.11", _val)[0];
         dAgency334["dAgency.11"] = _val;
+        _retArray.push("<dAgency.11>" + val + "</dAgency.11>");
+
     };
 
     _val = getValue(businessObject.elements, "dAgency.12");
@@ -109,6 +122,8 @@ var setdAgency = function (businessObject) {
     else {
         D01.D01_09 = setD2("dAgency.12", _val)[0];
         dAgency334["dAgency.12"] = _val[0];
+        _retArray.push("<dAgency.12>" + val + "</dAgency.12>");
+
     };
 
     _val = getValue(businessObject.elements, "dAgency.13");
@@ -120,6 +135,7 @@ var setdAgency = function (businessObject) {
     else {
         D01.D01_08 = setD2("dAgency.13", _val)[0];
         dAgency334["dAgency.13"] = _val[0];
+        _retArray.push("<dAgency.13>" + val + "</dAgency.13>");
     };
 
     _val = getValue(businessObject.elements, "dAgency.14");
@@ -129,6 +145,8 @@ var setdAgency = function (businessObject) {
     }
     else {
         dAgency334["dAgency.14"] = _val[0];
+        _retArray.push("<dAgency.14>" + val + "</dAgency.14>");
+
     };
 
     _val = getValue(businessObject.elements, "dAgency.23");
@@ -139,20 +157,25 @@ var setdAgency = function (businessObject) {
     else
     {
         dAgency334["dAgency.23"] = _val;
-        D01.D01_19 = _val;
+        D01.D01_19 = _val;   
+        _retArray.push("<dAgency.23>" + val + "</dAgency.23>");
+
     };
     _val = getValue(businessObject.elements, "dAgency.24");
     if (_val == null) {
         dAgency334["dAgency.24"] = null;
         D01.D01_20 = null;
     }
-    else {
+    else 
+    {
         dAgency334["dAgency.24"] = _val;
         D01.D01_20 = _val;
+        _retArray.push("<dAgency.24>" + val + "</dAgency.24>");
     };
     _val = getValue(businessObject.elements, "dAgency.25");
     if (_val == null) {
         ErrorList.unshift("dAgency.25 National Element");
+        _retArray.push("<dAgency.25" + NIL_V3NOT_RECORDED);
         dAgency334["dAgency.25"] = v3NOT_RECORDED;
         D01.D01_21 = v2NOT_RECORDED;
     }
@@ -160,16 +183,22 @@ var setdAgency = function (businessObject) {
     {
         dAgency334["dAgency.25"] = _val;
         D01.D01_21 = _val[0];
+        _retArray.push("<dAgency.25>" + val + "</dAgency.25>");
+
     };
 
     _val = getValue(businessObject.elements, "dAgency.26");
     if (_val == null) {
         ErrorList.unshift("dAgency.26 National Element");
         dAgency334["dAgency.26"] = v3NOT_RECORDED;
+        _retArray.push("<dAgency.26" + NIL_V3NOT_RECORDED);
+
     }
 
     else {
         dAgency334["dAgency.26"] = _val;
+        _retArray.push("<dAgency.26>" + val + "</dAgency.26>");
+
 
     };    
 
@@ -208,6 +237,8 @@ var setAgencyServiceGroup = function (groupObject) {
         else
         {
             AgencyServiceGroup["dAgency.05"] = _val[0];
+            _retArray.push("<dAgency.05>" + val + "</dAgency.05>");
+
         };
 
         _val = getValue(groupObject[i].elements, "dAgency.06");
@@ -219,28 +250,38 @@ var setAgencyServiceGroup = function (groupObject) {
         {
             AgencyServiceGroup["dAgency.06"] = _val;
             D01.D01_21 = _val;
+        	_retArray.push("<dAgency.06>" + val + "</dAgency.06>");
+
         };
 
         _val = getValue(groupObject[i].elements, "dAgency.07");
         if (_val == null)
         {
             ErrorList.push("dAgency.07 required");
-            AgencyServiceGroup["dAgency.07"] = v3NOT_RECORDED;        
+            AgencyServiceGroup["dAgency.07"] = v3NOT_RECORDED;  
+            _retArray.push("<dAgency.07" + NIL_V3NOT_RECORDED);
+      
         }
         else
         {
             AgencyServiceGroup["dAgency.07"] = _val;
+            _retArray.push("<dAgency.07>" + val + "</dAgency.07>");
+
         };
 
         _val = getValue(groupObject[i].elements, "dAgency.08");
         if (_val == null)
         {
             ErrorList.push("dAgency.08 required");
-            AgencyServiceGroup["dAgency.08"] = v3NOT_RECORDED            
+            AgencyServiceGroup["dAgency.08"] = v3NOT_RECORDED;
+            _retArray.push("<dAgency.08" + NIL_V3NOT_RECORDED);
+            
         }
         else
         {
             AgencyServiceGroup["dAgency.08"] = _val;
+            _retArray.push("<dAgency.08>" + val + "</dAgency.08>");
+
         };
 //        console.log(AgencyServiceGroup);
         _retArray.push(AgencyServiceGroup)
@@ -263,49 +304,61 @@ var setAgencyYearGroup = function (groupObject) {
         else {
             AgencyYearGroup["dAgency.15"] = _val[0];
             D01.D01_10 = _val[0];
+            _retArray.push("<dAgency.15>" + val + "</dAgency.15>");
         };
 
         _val = getValue(groupObject[i].elements, "dAgency.16");
         if (_val == null) {
             ErrorList.push("dAgency.16 required");
             AgencyYearGroup["dAgency.16"] = v3NOT_RECORDED;
+          _retArray.push("<dAgency.16" + NIL_V3NOT_RECORDED);
             D01.D01_12 = null;
         }
         else {
             AgencyYearGroup["dAgency.16"] = _val[0];
             D01.D01_12 = _val[0];
+            _retArray.push("<dAgency.16>" + val[0] + "</dAgency.16>");
+
         };
 
         _val = getValue(groupObject[i].elements, "dAgency.17");
         if (_val == null) {
             ErrorList.push("dAgency.17 required");
             AgencyYearGroup["dAgency.17"] = v3NOT_RECORDED;
+            _retArray.push("<dAgency.17" + NIL_V3NOT_RECORDED);
             D01.D01_13 = null;
         }
         else {
             AgencyYearGroup["dAgency.17"] = _val[0];
             D01.D01_13 = _val[0];
+          _retArray.push("<dAgency.17>" + val[0] + "</dAgency.17>");
+
         };
 
         _val = getValue(groupObject[i].elements, "dAgency.18");
         if (_val == null) {
             ErrorList.push("dAgency.18 required");
             AgencyYearGroup["dAgency.18"] = v3NOT_RECORDED;
+         	_retArray.push("<dAgency.18" + NIL_V3NOT_RECORDED);
             D01.D01_14 = null;
         }
         else {
             AgencyYearGroup["dAgency.18"] = _val[0];
             D01.D01_14 = _val[0];
+		    _retArray.push("<dAgency.18>" + val[0] + "</dAgency.18>");
         };
         _val = getValue(groupObject[i].elements, "dAgency.19");
         if (_val == null) {
             ErrorList.push("dAgency.19 required");
             AgencyYearGroup["dAgency.19"] = v3NOT_RECORDED;
+            _retArray.push("<dAgency.19" + NIL_V3NOT_RECORDED);
             D01.D01_15 = null;
         }
         else {
             AgencyYearGroup["dAgency.19"] = _val[0];
             D01.D01_15 = _val[0];
+		    _retArray.push("<dAgency.19>" + val[0] + "</dAgency.19>");
+
         };
 
 
@@ -313,22 +366,28 @@ var setAgencyYearGroup = function (groupObject) {
         if (_val == null) {
             ErrorList.push("dAgency.20 required");
             AgencyYearGroup["dAgency.20"] = v3NOT_RECORDED;
+            _retArray.push("<dAgency.20" + NIL_V3NOT_RECORDED);
             D01.D01_16 = null;
         }
         else {
             AgencyYearGroup["dAgency.20"] = _val[0];
             D01.D01_16 = _val[0];
+		    _retArray.push("<dAgency.20>" + val[0] + "</dAgency.20>");
+
         };
 
         _val = getValue(groupObject[i].elements, "dAgency.21");
         if (_val == null) {
             ErrorList.push("dAgency.21 required");
             AgencyYearGroup["dAgency.21"] = v3NOT_RECORDED;
+            _retArray.push("<dAgency.21" + NIL_V3NOT_RECORDED);
             D01.D01_17 = null;
         }
         else {
             AgencyYearGroup["dAgency.21"] = _val[0];
             D01.D01_17 = _val[0];
+    		_retArray.push("<dAgency.21>" + val[0] + "</dAgency.21>");
+
         };
 
         _val = getValue(groupObject[i].elements, "dAgency.22");
@@ -336,12 +395,15 @@ var setAgencyYearGroup = function (groupObject) {
             if (isRequiredStateElement("dAgency.22") == true) {
                 ErrorList.push("dAgency.22 required");
                 AgencyYearGroup["dAgency.22"] = v3NOT_RECORDED;
+               _retArray.push("<dAgency.22" + NIL_V3NOT_RECORDED);
                 D01.D01_18 = null;
             }
         }
         else {
             AgencyYearGroup["dAgency.22"] = _val[0];
             D01.D01_18 = _val[0];
+        	_retArray.push("<dAgency.22>" + val[0] + "</dAgency.22>");
+
         };
 
         _retArray.push(AgencyYearGroup);

@@ -1,12 +1,17 @@
 var ErrorList = [];
-
-var v3NOT_REPORTING = "7701005";
-var v3NOT_RECORDED = "7701003";
-var v3NOT_AVAILABLE = "-5"
+var v3NOT_REPORTING = " NV=\"7701005\"";
+var v3NOT_RECORDED = " NV=\"7701003\"";
+var v2NOT_AVAILABLE = "-5";
 var v2NOT_REPORTING = "-15";
 var v2NOT_APPLICABLE = "-25"
 var v2NOT_RECORDED = "-20";
 var v2NOT_KNOWN = "-10";
+var NIL_V3NOT_RECORDED =  "NV=\"7701003\" xsi:nil=\"true\"/>" ;
+var NIL_V3NOT_REPORTING = "NV=\"7701005\" xsi:nil=\"true\"/>" ;
+var NIL_V3NOT_APPLICABLE ="NV=\"7701001\" xsi:nil=\"true\"/>" ;
+var PN_REFUSED_IS_NILLABLE = "xsi:nil=\"true\" PN=\"8801019\"/>";
+var PN_UNABLE_TO_COMPLETE_IS_NILLABLE = "xsi:nil=\"true\" PN=\"8801023\"/>";
+var PN_FINDING_NOT_PRESENT_IS_NILLABLE = "xsi:nil=\"true\" PN=\"8801005\"/>";
 
 var dFacility334 = new Object;
 var D01 = new Object;
@@ -14,6 +19,8 @@ var D01 = new Object;
 var setdFacility = function (businessObject) 
 {
     var _retArray = [];
+    retArray.push("<dFacilityGroup>");
+
     console.log(businessObject);
     console.log(businessObject["FacilityGroup"].length);
     
@@ -27,7 +34,9 @@ var setdFacility = function (businessObject)
     else 
     {
         dFacility["dFacility.01"] = _val[0];
-        D04.D04_15=setD2("dFacility.01", _val[0]);
+        D04.D04_15=setD2("dFacility.01", _val[0]);                
+        _retArray.push("<dFacility.01>" + val[0] + "</dFacility.01>");
+
     }
 };
     var FacilityGroup = function (groupObject) {
@@ -46,6 +55,7 @@ var setdFacility = function (businessObject)
         {
            	D04.D04_15 = _val[0];
         	FacilityGroup["dFacility.02"] = _val[0];
+        	_retArray.push("<dFacility.02>" + val[0] + "</dFacility.02>");
         };
 
         _val = getValue(businessObject.elements, "dFacility.03");
@@ -58,6 +68,7 @@ var setdFacility = function (businessObject)
         {
            	D04.D04_12 = _val[0];
         	FacilityGroup["dFacility.03"] = _val[0];
+        	_retArray.push("<dFacility.03>" + val[0] + "</dFacility.03>");
         };
 
         _val = getValue(businessObject.elements, "dFacility.04");
@@ -67,7 +78,8 @@ var setdFacility = function (businessObject)
         }
         else 
         {
-        	FacilityGroup["dFacility.04"] = _val;
+        	FacilityGroup["dFacility.04"] = _val[0];
+        	_retArray.push("<dFacility.04>" + val[0] + "</dFacility.04>");
         };
 
         _val = getValue(businessObject.elements, "dFacility.05");
@@ -78,6 +90,7 @@ var setdFacility = function (businessObject)
         else 
         {
             FacilityGroup["dFacility.05"] = _val[0];
+        	_retArray.push("<dFacility.05>" + val[0] + "</dFacility.05>");
         };
 
 
@@ -89,6 +102,8 @@ var setdFacility = function (businessObject)
         else 
         {
             FacilityGroup["dFacility.06"] = _val[0];
+	        _retArray.push("<dFacility.06>" + val[0] + "</dFacility.06>");
+
         };
 
         _val = getValue(businessObject.elements, "dFacility.07");
@@ -99,6 +114,7 @@ var setdFacility = function (businessObject)
         else 
         {
             FacilityGroup["dFacility.07"] = _val[0];
+        	_retArray.push("<dFacility.07>" + val[0] + "</dFacility.07>");
         };
         
         _val = getValue(businessObject.elements, "dFacility.08");
@@ -109,6 +125,7 @@ var setdFacility = function (businessObject)
         else 
         {
             FacilityGroup["dFacility.08"] = _val[0];
+        	_retArray.push("<dFacility.08>" + val[0] + "</dFacility.08>");
         };
 
 
@@ -119,6 +136,7 @@ var setdFacility = function (businessObject)
         }
         else 
         {
+			 _retArray.push("<dFacility.09>" + val[0] + "</dFacility.09>");
             FacilityGroup["dFacility.09"] = _val[0];
         };
 
@@ -129,6 +147,7 @@ var setdFacility = function (businessObject)
         }
         else 
         {
+        	_retArray.push("<dFacility.10>" + val[0] + "</dFacility.10>");
             FacilityGroup["dFacility.10 "] = _val[0];
         };
 
@@ -139,6 +158,7 @@ var setdFacility = function (businessObject)
         }
         else 
         {
+        	_retArray.push("<dFacility.11>" + val[0] + "</dFacility.11>");
             FacilityGroup["dFacility.11 "] = _val[0];
         };
         _val = getValue(businessObject.elements, "dFacility.12");
@@ -148,6 +168,7 @@ var setdFacility = function (businessObject)
         }
         else 
         {
+        	_retArray.push("<dFacility.12>" + val[0] + "</dFacility.12>");
             FacilityGroup["dFacility.12 "] = _val[0];
         };
         _val = getValue(businessObject.elements, "dFacility.13");
@@ -157,7 +178,8 @@ var setdFacility = function (businessObject)
         }
         else 
         {
-            FacilityGroup["dFacility.13 "] = _val[0];
+        	_retArray.push("<dFacility.13>" + val[0] + "</dFacility.13>");
+        	FacilityGroup["dFacility.13 "] = _val[0];
         };
         _val = getValue(businessObject.elements, "dFacility.14");
         if (_val == null)
@@ -166,11 +188,14 @@ var setdFacility = function (businessObject)
         }
         else 
         {
-            FacilityGroup["dFacility.14 "] = _val[0];
+        	_retArray.push("<dFacility.14>" + val[0] + "</dFacility.14>");
+			FacilityGroup["dFacility.14 "] = _val[0];
         };
 	return FacilityGroup;
 	        
     } // loop term
+    retArray.push("</dFacilityGroup>");
+
 };    //end of function   
 
 

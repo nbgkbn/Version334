@@ -14,6 +14,9 @@ var D01 = new Object;
 var setdLocation = function (businessObject) 
 {
     var _retArray = [];
+    var _retArray.push("<LocationGroup>");
+
+
     console.log(businessObject);
     console.log(businessObject["LocationGroup"].length);
 
@@ -28,6 +31,7 @@ var setdLocation = function (businessObject)
         else 
         {
         	LocationGroup["dLocation.01"] = _val[0];
+            _retArray.push("<dLocation.01>" + val[0] + "</dLocation.01>");
         };
         
         _val = getValue(businessObject.elements, "dLocation.02");
@@ -40,20 +44,9 @@ var setdLocation = function (businessObject)
         {
            	D05.D05_01	 = _val[0];
         	LocationGroup["dLocation.02"] = _val[0];
-        };
+            _retArray.push("<dLocation.02>" + val[0] + "</dLocation.02>");
 
-        _val = getValue(businessObject.elements, "dLocation.02");
-        if (_val == null)
-        {
-        	D05.D05_01	= null;
-           	LocationGroup["dLocation.02"] = null;
-        }
-        else 
-        {
-           	D05.D05_01	 = _val[0];
-        	LocationGroup["dLocation.02"] = _val[0];
         };
-
 
         _val = getValue(businessObject.elements, "dLocation.03");
         if (_val == null)
@@ -65,6 +58,8 @@ var setdLocation = function (businessObject)
         {
            	D05.D05_02	 = _val[0];
         	LocationGroup["dLocation.03"] = _val[0];
+            _retArray.push("<dLocation.03>" + val[0] + "</dLocation.03>");
+
         };
 
         _val = getValue(businessObject.elements, "dLocation.04");
@@ -77,6 +72,8 @@ var setdLocation = function (businessObject)
         {
            	D05.D05_04	 = _val[0];
         	LocationGroup["dLocation.04"] = _val[0];
+            _retArray.push("<dLocation.04>" + val[0] + "</dLocation.04>");
+
         };
 
 
@@ -88,6 +85,7 @@ var setdLocation = function (businessObject)
         else 
         {
             LocationGroup["dLocation.05"] = _val[0];
+            _retArray.push("<dLocation.05>" + val[0] + "</dLocation.05>");
         };
 
         _val = getValue(businessObject.elements, "dLocation.06");
@@ -100,6 +98,8 @@ var setdLocation = function (businessObject)
         {
            	D05.D05_05	 = _val[0];
         	LocationGroup["dLocation.06"] = _val[0];
+            _retArray.push("<dLocation.06>" + val[0] + "</dLocation.06>");
+
         };
 
          _val = getValue(businessObject.elements, "dLocation.07");
@@ -112,6 +112,7 @@ var setdLocation = function (businessObject)
         {
            	D05.D05_06 = _val[0];
         	LocationGroup["dLocation.07"] = _val[0];
+            _retArray.push("<dLocation.07>" + val[0] + "</dLocation.07>");
         };
 
          _val = getValue(businessObject.elements, "dLocation.08");
@@ -124,6 +125,7 @@ var setdLocation = function (businessObject)
         {
            	D05.D05_07 = _val[0];
         	LocationGroup["dLocation.08"] = _val[0];
+            _retArray.push("<dLocation.08>" + val[0] + "</dLocation.08>");
         };
 
         _val = getValue(businessObject.elements, "dLocation.09");
@@ -136,6 +138,7 @@ var setdLocation = function (businessObject)
         {
             LocationGroup["dLocation.09"] = _val[0];
         	D05.D05_08 = _val[0];
+            _retArray.push("<dLocation.09>" + val[0] + "</dLocation.09>");
         };
 
         _val = getValue(businessObject.elements, "dLocation.10");
@@ -146,6 +149,7 @@ var setdLocation = function (businessObject)
         else 
         {              	
             LocationGroup["dLocation.10 "] = _val[0];
+            _retArray.push("<dLocation.10>" + val[0] + "</dLocation.10>");
         };
 
         _val = getValue(businessObject.elements, "dLocation.11");
@@ -156,6 +160,7 @@ var setdLocation = function (businessObject)
         else 
         {
             LocationGroup["dLocation.11 "] = _val[0];
+            _retArray.push("<dLocation.11>" + val[0] + "</dLocation.11>");
         };
         _val = getValue(businessObject.elements, "dLocation.12");
         if (_val == null)
@@ -167,7 +172,9 @@ var setdLocation = function (businessObject)
         {
             LocationGroup["dLocation.12 "] = _val[0];
         	D05.D05_09 = _val[0];
+            _retArray.push("<dLocation.12>" + val[0] + "</dLocation.12>");
         };
+    var _retArray.push("</LocationGroup>");
 
 	return LocationGroup;
 	        
