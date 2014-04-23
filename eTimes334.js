@@ -1,4 +1,4 @@
-var ErrorList = [];
+﻿var ErrorList = [];
 var v3NOT_REPORTING = " NV=\"7701005\"";
 var v3NOT_RECORDED = " NV=\"7701003\"";
 var v2NOT_AVAILABLE = "-5";
@@ -336,3 +336,4 @@ function setD2(NEMSISElementNumber, valueArray) {
     return _retArray;
 
 }
+*/

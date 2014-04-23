@@ -1,4 +1,4 @@
-var ErrorList = [];
+﻿var ErrorList = [];
 var v3NOT_REPORTING = " NV=\"7701005\"";
 var v3NOT_RECORDED = " NV=\"7701003\"";
 var v2NOT_AVAILABLE = "-5";
@@ -11,7 +11,7 @@ var NIL_V3NOT_REPORTING = "NV=\"7701005\" xsi:nil=\"true\"/>" ;
 var NIL_V3NOT_APPLICABLE ="NV=\"7701001\" xsi:nil=\"true\"/>" ;
 var PN_REFUSED_IS_NILLABLE = "xsi:nil=\"true\" PN=\"8801019\"/>";
 var PN_UNABLE_TO_COMPLETE_IS_NILLABLE = "xsi:nil=\"true\" PN=\"8801023\"/>";
-var PN_FINDING_NOT_PRESENT_IS_NILLABLE = "xsi:nil=\"true\" PN=\"8801005\"/>";
+PN_FINDING_NOT_PRESENT_IS_NILLABLE = "xsi:nil=\"true\" PN=\"8801005\"/>";
 
 var eVitals = new Object;
 var D01 = new Object;
@@ -611,3 +611,4 @@ function setD2(NEMSISElementNumber, valueArray) {
     return _retArray;
 
 }
+*/
