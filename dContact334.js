@@ -44,12 +44,12 @@ var setdContact = function (businessObject)
             {
                 dContact.ContactInfoGroup["dContact.02"] = v3NOT_RECORDED;
                 _retArray.push("<dContact.02" + NIL_V3NOT_RECORDED);
-                D2.D02_01 = v2NOT_RECORDED
+                D02.D02_01 = v2NOT_RECORDED
             }
             else
             {
                 dContact.ContactInfoGroup["02"] = v2NOT_REPORTING
-                D2.D02_01 = v2NOT_REPORTING;
+                D02.D02_01 = v2NOT_REPORTING;
    				_retArray.push("<dContact.02" + NIL_V3NOT_REPORTING );            }
             }
         }
@@ -57,7 +57,7 @@ var setdContact = function (businessObject)
         {
             dContact.ContactInfoGroup["dContact.02"] = _val[0];
             retArray.push("<dContact.02>" + val[0] + "</dContact.02>");
-            D2.D02_01 = _val[0];
+            D02.D02_01 = _val[0];
         };
 
         _val = getValue(businessObject.elements, "dContact.03");
@@ -66,13 +66,13 @@ var setdContact = function (businessObject)
             if(isRequiredStateElement("dContact.03") ==- true)
             {
                 dContact.ContactInfoGroup["dContact.03"] = v3NOT_RECORDED;
-                D2.D02_03 = v2NOT_RECORDED;
+                D02.D02_03 = v2NOT_RECORDED;
             	_retArray.push("<dContact.03" + NIL_V3NOT_RECORDED);
             }
             else
             {
                 dContact.ContactInfoGroup["dContact.03"] = v2NOT_REPORTING
-                D2.D02_03 = v2NOT_REPORTING;
+                D02.D02_03 = v2NOT_REPORTING;
    				_retArray.push("<dContact.03" + NIL_V3NOT_REPORTING );            }
             }
         }
@@ -80,18 +80,17 @@ var setdContact = function (businessObject)
         {
             dContact.ContactInfoGroup["dContact.03"] = _val[0];
             retArray.push("<dContact.03>" + val[0] + "</dContact.03>");
-            D2.D02_03 = _val[0];
+            D02.D02_03 = _val[0];
         };
 
         _val = getValue(businessObject.elements, "dContact.04");
         if (_val == null)
         {
-    
         }
         else 
         {
             dContact.ContactInfoGroup["dContact.04"] = _val[0];
-            D2.D02_02 = _val[0];
+            D02.D02_02 = _val[0];
             retArray.push("<dContact.04>" + val[0] + "</dContact.04>");
 
         };
@@ -103,21 +102,20 @@ var setdContact = function (businessObject)
             if(isRequiredStateElement("dContact.05") ==- true)
             {
               	_retArray.push("<dContact.05" + NIL_V3NOT_RECORDED);
-                D2.D02_04 = v2NOT_RECORDED;
+                D02.D02_04 = v2NOT_RECORDED;
             }
             else
             {
                 dContact.ContactInfoGroup["dContact.05"] = v2NOT_REPORTING;
-                D2.D02_04 = v2NOT_REPORTING;
+                D02.D02_04 = v2NOT_REPORTING;
     			_retArray.push("<dContact.05" + NIL_V3NOT_REPORTING );            }
-
             }
         }
         else 
         {
             retArray.push("<dContact.05>" + val[0] + "</dContact.05>");
             dContact.ContactInfoGroup["dContact.05"] = _val[0];
-            D2.D02_04 = _val[0];
+            D02.D02_04 = _val[0];
         };
 
         
