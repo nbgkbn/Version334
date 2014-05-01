@@ -1,11 +1,18 @@
 var ErrorList = [];
-var v3NOT_REPORTING = "7701005";
-var v3NOT_RECORDED = "7701003";
-var v3NOT_AVAILABLE = "-5"
+var v3NOT_REPORTING = " NV=\"7701005\"";
+var v3NOT_RECORDED = " NV=\"7701003\"";
+var v2NOT_AVAILABLE = "-5";
 var v2NOT_REPORTING = "-15";
 var v2NOT_APPLICABLE = "-25"
 var v2NOT_RECORDED = "-20";
 var v2NOT_KNOWN = "-10";
+var NIL_V3NOT_RECORDED =  "NV=\"7701003\" xsi:nil=\"true\"/>" ;
+var NIL_V3NOT_REPORTING = "NV=\"7701005\" xsi:nil=\"true\"/>" ;
+var NIL_V3NOT_APPLICABLE ="NV=\"7701001\" xsi:nil=\"true\"/>" ;
+var PN_REFUSED_IS_NILLABLE = "xsi:nil=\"true\" PN=\"8801019\"/>";
+var PN_UNABLE_TO_COMPLETE_IS_NILLABLE = "xsi:nil=\"true\" PN=\"8801023\"/>";
+var PN_FINDING_NOT_PRESENT_IS_NILLABLE = "xsi:nil=\"true\" PN=\"8801005\"/>";
+
 
 var dAgency334 = new Object;
 var D01 = new Object;
@@ -26,7 +33,7 @@ var setdAgency = function (businessObject) {
         
     _val = getValue(businessObject.elements, "dAgency.02");
     if (_val == null) {
-        ErrorList.unshift("dAgency.02 National Element");
+        ErrorList.push("dAgency.02 National Element");
     }
     else {
         D01.D01_01 = _val[0];
@@ -40,7 +47,7 @@ var setdAgency = function (businessObject) {
     {
         if (isRequiredStateElement("dAgency.03") == true) {
             ErrorList.push("dAgency.03 required");
-            _retArray.push("<dAgency.03" + NIL_V3NOT_RECORDED );
+            _retArray.push("<dAgency.03" + V3NOT_RECORDED );
         }
         else 
         {
@@ -68,7 +75,7 @@ var setdAgency = function (businessObject) {
 
     _val = getValue(businessObject.elements, "dAgency.09");
     if (_val == null) {
-        ErrorList.unshift("dAgency.09 National Element");
+        ErrorList.push("dAgency.09 National Element");
     }
     else {
         dAgency334["dAgency.09"] = _val[0];
@@ -125,7 +132,7 @@ var setdAgency = function (businessObject) {
     else {
         D01.D01_09 = setD2("dAgency.12", _val)[0];
         dAgency334["dAgency.12"] = _val[0];
-        _retArray.push("<dAgency.12>" + val + "</dAgency.12>");
+        _retArray.push("<dAgency.12>" + val[0] + "</dAgency.12>");
 
     };
 

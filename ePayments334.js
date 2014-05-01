@@ -259,8 +259,6 @@ var setePayment = function (businessObject)
             _retArray.push("<ePayment.38>" + _val[0] + "</ePayment.38>")
         };
 
-
-
         _val = getValue(businessObject.elements, "ePayment.39");
         if (_val == null) {
         }
@@ -285,7 +283,6 @@ var setePayment = function (businessObject)
             {
                 _phoneType = WORK;
             }
-
             _retArray.push("<ePayment.39 " + _phoneType +">" + _val[0] + "</ePayment.39>")
             E07.E07_32 = _val[0];
         };
